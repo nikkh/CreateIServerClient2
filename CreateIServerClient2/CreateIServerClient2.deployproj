@@ -35,7 +35,10 @@
     <Content Include="Scripts\Deploy-AzureResourceGroup.ps1" />
     <None Include="Templates\azuredeploy.json" />
     <None Include="Templates\azuredeploy.parameters.json" />
+    <None Include="Templates\existingvnet.json" />
     <None Include="Templates\ImageTransfer.ps1" />
+    <None Include="Templates\metadata.json" />
+    <None Include="Templates\newvnet.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Tools\AzCopy.exe" />

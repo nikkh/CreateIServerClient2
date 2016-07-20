@@ -1,32 +1,39 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "adminUserName": {
-      "value": "YourNameHere"
+    "customVmName": {
+      "value": "customVM"
+    },
+    "userImageStorageAccountName": {
+      "value": "ci21c7135add2"
+    },
+    "adminUsername": {
+      "value": "username"
     },
     "adminPassword": {
       "value": "GEN-PASSWORD"
     },
+    "osDiskVhdUri": {
+      "value": "http://ci21c7135add2.blob.core.windows.net/vhds/cid4b28112a1.vhd"
+    },
+    "dnsLabelPrefix": {
+      "value": "GEN-UNIQUE"
+    },
+    "osType": {
+      "value": "Linux"
+    },
     "vmSize": {
-      "value": "Standard_A1"
+      "value": "Standard_D2"
     },
- 
-    "sourceImageURI": {
-      "value": "https://nhvhdcpy.blob.core.windows.net/vhds/IServerClientImage.vhd"
+    "newOrExistingVnet": {
+      "value": "new"
     },
-    "customImageName": {
-      "value": "IServerClientImage.vhd"
+    "newOrExistingVnetName": {
+      "value": "customVNET"
     },
-    "transferVmName": {
-      "value": "TransferVM"
-    },
-    "newVmName": {
-      "value": "IServerClient-YourNameHere"
-    },
-    "sourceStorageAccountKey": {
-      "value": "DBpzpFEwU7CW3GK8nrNJ65nFyGkbdOiR4kM/oLC0cR606Px+m/XgOiTnJdfWdbcJrs8uQgRGR2Sva6QOHo3WeA=="
-
+    "newOrExistingSubnetName": {
+      "value": "subnet1"
     }
   }
 }
