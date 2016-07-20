@@ -1,4 +1,4 @@
-﻿# CreateIServerClient2
+# CreateIServerClient2
 
 This template will generate an IServer client machine for use in the IServer POC.  When you click the 'deploy to azure' button below, you will need to log in to the Azure Maangement portal.  You can only do this if you log into the portal with an account that is associated with an MSDN subscription.  To do this using any other type of subscription is not permitted by Windows Client LIcencing rules.
 
