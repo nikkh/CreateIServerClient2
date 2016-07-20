@@ -11,11 +11,12 @@
     "userImageStorageAccountName": {
       "type": "string",
       "metadata": {
-        "description": "This is the name of the your storage account"
+        "description": "ispocbaseimges"
       }
     },
     "osDiskVhdUri": {
       "type": "string",
+      "defaultValue": "https://ispocbaseimges.blob.core.windows.net/vhds/ispocClientTemplate1.vhd",
       "metadata": {
         "description": "Uri of the your user image"
       }
