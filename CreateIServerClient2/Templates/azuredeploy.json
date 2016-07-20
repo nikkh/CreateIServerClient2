@@ -10,8 +10,9 @@
     },
     "userImageStorageAccountName": {
       "type": "string",
+      "defaultValue": "ispocbaseimges"
       "metadata": {
-        "description": "ispocbaseimges"
+        "description": "storage account where the base image resides"
       }
     },
     "osDiskVhdUri": {
