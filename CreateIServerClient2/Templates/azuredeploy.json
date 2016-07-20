@@ -13,7 +13,7 @@
     "dnsLabelPrefix": {
       "type": "string",
       "metadata": {
-        "description": "DNS Label for the Public IP. Must be lowercase. It should match with the following regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$ or it will raise an error."
+        "description": "DNS Label for the Public IP. This will form the left-most portion of the DNS entry for the VM.  For example if you choose ispoc-vm01, then the DNS will be ispoc-vm01.northeurope.cloudapp.azure.com.  Must be lowercase. It should match with the following regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$ or it will raise an error."
       }
     },
     "adminUserName": {
