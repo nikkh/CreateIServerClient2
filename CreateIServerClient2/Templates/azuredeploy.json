@@ -5,7 +5,7 @@
     "customVmName": {
       "type": "string",
       "metadata": {
-        "description": "This is the name of the your VM"
+        "description": "Enter the name of the VM to create.  Make sure this VM does not already ecisting in the target subscription"
       }
     },
     "userImageStorageAccountName": {
@@ -57,20 +57,21 @@
     "newOrExistingVnet": {
       "allowedValues": [ "new", "existing" ],
       "type": "string",
+      "defaultValue": "existing",
       "metadata": {
         "description": "Select if this template needs a new VNet or will reference an existing VNet"
       }
     },
     "newOrExistingVnetName": {
       "type": "string",
-      "defaultValue": "",
+      "defaultValue": "ispocVNET",
       "metadata": {
         "description": "New or Existing VNet Name"
       }
     },
     "newOrExistingSubnetName": {
       "type": "string",
-      "defaultValue": "Subnet1",
+      "defaultValue": "CLientSubnet",
       "metadata": {
         "description": "Subnet Name"
       }
