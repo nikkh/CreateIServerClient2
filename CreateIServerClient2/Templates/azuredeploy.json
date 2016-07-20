@@ -165,7 +165,7 @@
               "caching": "ReadWrite",
               "createOption": "FromImage",
               "image": {
-                "uri": "[parameters('osDiskVhdUri')]"
+                "uri": "[variables('osDiskVhdUri')]"
               },
               "vhd": {
                 "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', variables('userImageStorageAccountName')), variables('apiVersion')).primaryEndpoints.blob, 'vhds/',variables('vmName'), uniquestring(resourceGroup().id), 'osDisk.vhd')]"
