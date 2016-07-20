@@ -5,7 +5,7 @@
     "customVmName": {
       "type": "string",
       "metadata": {
-        "description": "Enter the name of the VM to create.  Make sure this VM does not already ecisting in the target subscription"
+        "description": "Enter the name of the VM to create.  Make sure this VM does not already existing in the target subscription"
       }
     },
     
