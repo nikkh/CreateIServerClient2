@@ -78,7 +78,7 @@
     "apiVersion": "2015-06-15",
     "templatelink": "[concat('https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/101-vm-from-user-image/',parameters('newOrExistingVnet'),'vnet.json')]",
     "userImageStorageAccountName": "ispocbaseimges",
-    "osDiskVhdUri": "https://ispocbaseimges.blob.core.windows.net/vhds/ispocClientTemplate1.vhd"
+    "osDiskVhdUri": "https://ispocbaseimges.blob.core.windows.net/vhds/ispocClientTemplate2.vhd"
 
 
     },

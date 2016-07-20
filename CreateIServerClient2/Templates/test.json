@@ -1,0 +1,68 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/VM_IP.json",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmName": {
+      "type": "string"
+    },
+    "vmSize": {
+      "type": "string",
+      "defaultValue": "Basic_A2"
+    },
+    "adminUserName": {
+      "type": "string"
+    },
+    "adminPassword": {
+      "type": "securestring"
+    },
+    "networkInterfaceId": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2015-06-15",
+      "properties": {
+        "hardwareProfile": {
+          "vmSize": "[parameters('vmSize')]"
+        },
+        "storageProfile": {
+          "osDisk": {
+            "osType": "Windows",
+            "name": "templateXx-osDisk.98d9c3a8-f087-4257-a4d2-34538eaacd18.vhd",
+            "createOption": "FromImage",
+            "image": {
+              "uri": "https://baseclient9772.blob.core.windows.net/system/Microsoft.Compute/Images/mytemplates/templateXx-osDisk.98d9c3a8-f087-4257-a4d2-34538eaacd18.vhd"
+            },
+            "vhd": {
+              "uri": "https://baseclient9772.blob.core.windows.net/vmcontainer599dfd5f-a7e9-4d1b-9c71-7539cf09c7c3/osDisk.599dfd5f-a7e9-4d1b-9c71-7539cf09c7c3.vhd"
+            },
+            "caching": "ReadWrite"
+          }
+        },
+        "osProfile": {
+          "computerName": "[parameters('vmName')]",
+          "adminUsername": "[parameters('adminUsername')]",
+          "adminPassword": "[parameters('adminPassword')]"
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "[parameters('networkInterfaceId')]"
+            }
+          ]
+        },
+        "diagnosticsProfile": {
+          "bootDiagnostics": {
+            "enabled": true,
+            "storageUri": "https://baseclient9772.blob.core.windows.net/"
+          }
+        },
+        "provisioningState": 0
+      },
+      "name": "[parameters('vmName')]",
+      "type": "Microsoft.Compute/virtualMachines",
+      "location": "northeurope"
+    }
+  ]
+}
