@@ -10,7 +10,7 @@
     },
     "userImageStorageAccountName": {
       "type": "string",
-      "defaultValue": "ispocbaseimges"
+      "defaultValue": "ispocbaseimges",
       "metadata": {
         "description": "storage account where the base image resides"
       }
@@ -83,7 +83,7 @@
     }
   },
   "variables": {
-    "publicIPAddressName": "userImagePublicIP",
+    "publicIPAddressName": "[concat(parameters('customVmName'),'PublicIP')]",
     "vmName": "[parameters('customVmName')]",
     "nicName": "[concat(parameters('customVmName'),'Nic')]",
     "publicIPAddressType": "Dynamic",
