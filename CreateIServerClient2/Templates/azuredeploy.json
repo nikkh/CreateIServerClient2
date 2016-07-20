@@ -8,13 +8,7 @@
         "description": "Enter the name of the VM to create.  Make sure this VM does not already ecisting in the target subscription"
       }
     },
-    "userImageStorageAccountName": {
-      "type": "string",
-      "defaultValue": "ispocbaseimges",
-      "metadata": {
-        "description": "storage account where the base image resides"
-      }
-    },
+    
     "osDiskVhdUri": {
       "type": "string",
       "defaultValue": "https://ispocbaseimges.blob.core.windows.net/vhds/ispocClientTemplate1.vhd",
@@ -88,7 +82,10 @@
     "nicName": "[concat(parameters('customVmName'),'Nic')]",
     "publicIPAddressType": "Dynamic",
     "apiVersion": "2015-06-15",
-    "templatelink": "[concat('https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/101-vm-from-user-image/',parameters('newOrExistingVnet'),'vnet.json')]"
+    "templatelink": "[concat('https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/101-vm-from-user-image/',parameters('newOrExistingVnet'),'vnet.json')]",
+    "userImageStorageAccountName":  "ispocbaseimges"
+    
+    
   },
   "resources": [
     {
@@ -176,7 +173,7 @@
               "uri": "[parameters('osDiskVhdUri')]"
             },
             "vhd": {
-              "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', parameters('userImageStorageAccountName')), variables('apiVersion')).primaryEndpoints.blob, 'vhds/',variables('vmName'), uniquestring(resourceGroup().id), 'osDisk.vhd')]"
+              "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', variables('userImageStorageAccountName')), variables('apiVersion')).primaryEndpoints.blob, 'vhds/',variables('vmName'), uniquestring(resourceGroup().id), 'osDisk.vhd')]"
             }
           }
         },
@@ -190,7 +187,7 @@
         "diagnosticsProfile": {
           "bootDiagnostics": {
             "enabled": "true",
-            "storageUri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', parameters('userImageStorageAccountName')), variables('apiVersion')).primaryEndpoints.blob)]"
+            "storageUri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', variables('userImageStorageAccountName')), variables('apiVersion')).primaryEndpoints.blob)]"
           }
         }
       }
